@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | Hexo</title>
+  <title>Weekly report | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="Weekly Report 课程汇报 上周进行生物统计学的课程汇报，差不多用了一天多的时间学习了R语言，没有学习他的基础语法就直接学他的应用还是相当的困难的，浪费了很多没必要的时间，但总体来说还算颇有收获，学习了单因素方差分析以及裂区方差分析。单因素方差分析应用的比较多，主要是用来分析某一个处理对于某一个指标的影响，判断该处理对于某一指标的影响是否显著。而对于同一处理不同组间（如不同的放牧强度）的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Weekly report">
+<meta property="og:url" content="http://example.com/2022/10/26/Weekly-report/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Weekly Report 课程汇报 上周进行生物统计学的课程汇报，差不多用了一天多的时间学习了R语言，没有学习他的基础语法就直接学他的应用还是相当的困难的，浪费了很多没必要的时间，但总体来说还算颇有收获，学习了单因素方差分析以及裂区方差分析。单因素方差分析应用的比较多，主要是用来分析某一个处理对于某一个指标的影响，判断该处理对于某一指标的影响是否显著。而对于同一处理不同组间（如不同的放牧强度）的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-26T03:04:39.000Z">
+<meta property="article:modified_time" content="2022-10-26T03:57:37.059Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -162,36 +167,70 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Weekly-report" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/10/26/Weekly-report/" class="archive-article-date">
-  	<time datetime="2022-10-26T03:04:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/10/26/Weekly-report/">Weekly report</a>
+    <h1 class="article-title" itemprop="name">
+      Weekly report
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/10/26/Weekly-report/" class="archive-article-date">
+  	<time datetime="2022-10-26T03:04:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Weekly-Report"><a href="#Weekly-Report" class="headerlink" title="Weekly Report"></a>Weekly Report</h1><ol>
+<li>课程汇报<br> 上周进行生物统计学的课程汇报，差不多用了一天多的时间学习了R语言，没有学习他的基础语法就直接学他的应用还是相当的困难的，浪费了很多没必要的时间，但总体来说还算颇有收获，学习了单因素方差分析以及裂区方差分析。单因素方差分析应用的比较多，主要是用来分析某一个处理对于某一个指标的影响，判断该处理对于某一指标的影响是否显著。而对于同一处理不同组间（如不同的放牧强度）的差异性，则需要对方差分析后的结果进行duncan、tuckey、lsd多重检验来比较不同组间的区别。需要注意的是，进行单因素方差分析时，处理效应的一列，应为处理效应的大小，如：放牧强度1,4,5等等而不能是不同的处理，如氮、水添加等等。如果氮、水添加等处理被同时放到“处理”一列时，进行分析时，需要将其进行拆解，即相同的处理放在一列，而列中的数据为该处理的强度。下面是具体代码实现：<br> ‘’’<br> library(openxlsx)<br> dat &lt;- read.xlsx(‘F:\R statistics\DATA.xlsx’,sheet &#x3D; 1,sep &#x3D; ‘\t’)<br> attach(dat) #可以自动匹配列表名,无需再用$符号来取列表中的某一列数据<br> anova1 &lt;- aov(Soilorganiccarbon~GI,data &#x3D; dat)<br> summary(anova1)<br> library(agricolae)<br> result &lt;- duncan.test(anova1,’GI’)<br> result<br> ‘’’<br> 裂区方差分析，主要应用于两个处理对于同一指标的影响。如，对某一样地进行了氮的添加以及放牧，此时需要考虑两个处理对于该指标的影响，即用裂区方差分析。主要有：主效应、副效应、区组（重复），在R语言中主要运用，mcmcglmm包，具体代码如下：<br> ‘’’<br> library(MCMCglmm)<br> m1.MCMC &#x3D; MCMCglmm(Y ~ V*N, random &#x3D; ~ B + B:mainplot, data&#x3D;oats)#Y为因变量,V与N为两个不同的处理,random为随机效应,B为区组,mainplot为随机因子<br> summary(m1.MCMC)<br> ‘’’</li>
+<li>组会汇报<br> 组会汇报的内容是王玲老师发表在PNAS上的多样化放牧文章，主要思想就是多样化放牧更有利于草地生态系统的多多样性以及多功能性。对于多多样性以及多功能性，王玲老师使用随机森林模型对多样性指标以及生态系统功能指标进行选取，最后确定以6个指标来表征多多样性，12个指标来表征多功能性。不同指标之间的量纲并不相同，因此王玲老师又使用0-1标准化将不同的指标划分到同一个标准下，以便进行比较。又使用多阈值法对不同处理（牛单牧、羊单牧、混牧、禁牧）对于多功能性的影响进行了分析与作图。</li>
+<li>下周工作计划<br> 学习计算多功能性的几种不同方法（多阈值法、平均值法等），根据王玲老师提供的数据对数据进行一个复现。学习机器学习以及数理统计知识，完成政治PPT、生态系统生态学PPT以及人工智能现代方法的第一次作业。提升自己的代码编程能力以及数学统计思想，为后续的科研学习打下良好基础。</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -203,19 +242,96 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/10/26/Weekly-report/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -238,8 +354,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
